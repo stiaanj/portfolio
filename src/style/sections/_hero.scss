@@ -4,9 +4,9 @@
   display: flex;
   align-items: center;
   border-bottom: 0px;
-  background: $white-color;
+  background: $background-color;
   font-weight: 400;
-  color: $dark-blue-text;
+  color: $white-color;
   padding: 0rem 5.6rem;
   margin-bottom: 0;
   top: 0;
@@ -14,6 +14,7 @@
   bottom: 0;
   right: 0;
   z-index: -1;
+  border-radius: 0;
 
   // If you want to set a background image on the hero section, uncomment these with yout custom image
 
@@ -23,6 +24,10 @@
 
   @include respond(phone) {
     padding: 0rem $default-font-size;
+  }
+
+  .hero-name {
+    white-space: nowrap;
   }
 
   .hero-title {

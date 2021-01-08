@@ -19,9 +19,7 @@ export const heroData = {
 // ABOUT DATA
 export const aboutData = {
   img: 'profile.jpg',
-  paragraphOne: '',
-  paragraphTwo: '',
-  paragraphThree: '',
+  description: '',
   resume: '', // if no resume, the button will not show up
 };
 
@@ -29,7 +27,7 @@ export const aboutData = {
 export const historyData = [
   {
     id: nanoid(),
-    img: 'project.jpg',
+    img: '',
     title: '',
     info: '',
     info2: '',
@@ -38,7 +36,7 @@ export const historyData = [
   },
   {
     id: nanoid(),
-    img: 'project.jpg',
+    img: '',
     title: '',
     info: '',
     info2: '',
@@ -47,7 +45,7 @@ export const historyData = [
   },
   {
     id: nanoid(),
-    img: 'project.jpg',
+    img: '',
     title: '',
     info: '',
     info2: '',
@@ -73,11 +71,6 @@ export const footerData = {
     },
     {
       id: nanoid(),
-      name: 'codepen',
-      url: '',
-    },
-    {
-      id: nanoid(),
       name: 'linkedin',
       url: '',
     },
@@ -92,4 +85,10 @@ export const footerData = {
 // Github start/fork buttons
 export const githubButtons = {
   isEnabled: false, // set to false to disable the GitHub stars/fork buttons
+};
+
+export const timingsData = {
+  duration: 750,
+  delay: 350,
+  mobileWidth: 768,
 };

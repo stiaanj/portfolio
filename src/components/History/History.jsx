@@ -1,13 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Fade from 'react-reveal/Fade';
-import Tilt from 'react-tilt';
 import { Container, Row, Col } from 'react-bootstrap';
 import PortfolioContext from '../../context/context';
 import Title from '../Title/Title';
-import HistoryImg from '../Image/HistoryImg';
 
 const History = () => {
-  const { history } = useContext(PortfolioContext);
+  const { history, timings } = useContext(PortfolioContext);
+  const { duration, delay } = timings;
 
   const [isDesktop, setIsDesktop] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -28,7 +27,7 @@ const History = () => {
         <div className="history-wrapper">
           <Title title="History" />
           {history.map((snapshot) => {
-            const { title, info, info2, url, repo, img, id } = snapshot;
+            const { title, info, info2, url, repo, id } = snapshot;
 
             return (
               <Row key={id}>
@@ -36,8 +35,8 @@ const History = () => {
                   <Fade
                     left={isDesktop}
                     bottom={isMobile}
-                    duration={1000}
-                    delay={500}
+                    duration={duration}
+                    delay={delay}
                     distance="30px"
                   >
                     <div className="history-wrapper__text">
@@ -68,42 +67,6 @@ const History = () => {
                           Source Code
                         </a>
                       )}
-                    </div>
-                  </Fade>
-                </Col>
-                <Col lg={8} sm={12}>
-                  <Fade
-                    right={isDesktop}
-                    bottom={isMobile}
-                    duration={1000}
-                    delay={1000}
-                    distance="30px"
-                  >
-                    <div className="history-wrapper__image">
-                      <a
-                        href={url || '#!'}
-                        target="_blank"
-                        aria-label="History Link"
-                        rel="noopener noreferrer"
-                      >
-                        <Tilt
-                          options={{
-                            reverse: false,
-                            max: 8,
-                            perspective: 1000,
-                            scale: 1,
-                            speed: 300,
-                            transition: true,
-                            axis: null,
-                            reset: true,
-                            easing: 'cubic-bezier(.03,.98,.52,.99)',
-                          }}
-                        >
-                          <div data-tilt className="thumbnail rounded">
-                            <HistoryImg alt={title} filename={img} />
-                          </div>
-                        </Tilt>
-                      </a>
                     </div>
                   </Fade>
                 </Col>

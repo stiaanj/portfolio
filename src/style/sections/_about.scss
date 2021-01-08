@@ -18,64 +18,30 @@
     clip-path: none;
   }
 
-  .about-wrapper {
-    @include respond(phone) {
-      padding-bottom: 5rem;
+  .about-flex {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+    @include respond(tab-port) {
+      display: block;
     }
+  }
 
-    &__image {
-      display: flex;
-      height: 100%;
-      align-items: center;
-      justify-content: center;
+  .about-text {
+    margin-left: 5rem;
+    text-align: left;
 
-      @include respond(tab-port) {
-        padding-bottom: 6.4rem;
-      }
-      @include respond(tab-land) {
-        height: 100%;
-      }
+    @include respond(tab-port) {
+      margin-top: 5rem;
+      margin-left: 0;
+      text-align: center;
     }
+  }
 
-    &__info {
-      display: flex;
-      height: 100%;
-      justify-content: center;
-      flex-direction: column;
-
-      @include respond(phone) {
-        align-items: center;
-      }
-
-      &-text {
-        text-align: left;
-
-        @include respond(tab-port) {
-          font-size: 1.5rem;
-          text-align: center;
-        }
-        @include respond(phone) {
-          font-size: 1.6rem;
-          text-align: center;
-        }
-
-        &--important {
-          background: darken($secondary-color, 1%);
-          display: inline-block;
-          font-style: italic;
-          padding: 0 0.3rem;
-          margin: 0.3rem 0;
-          line-height: 1.6;
-
-          @include respond(phone) {
-            display: inline;
-            margin: 0;
-            padding: 0;
-            background: transparent;
-            font-style: normal;
-          }
-        }
-      }
-    }
+  .about-image {
+    align-items: center;
+    justify-content: center;
+    display: flex;
   }
 }
